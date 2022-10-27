@@ -36,6 +36,9 @@ resource "azurerm_eventgrid_domain" "domain" {
 
   # only allows RBAC
   local_auth_enabled = false
+  identity {
+    type = "SystemAssigned"
+  }
 
   tags = local.tags
 }
