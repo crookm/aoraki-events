@@ -34,5 +34,8 @@ resource "azurerm_eventgrid_domain" "domain" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
+  # only allows RBAC
+  local_auth_enabled = false
+
   tags = local.tags
 }
