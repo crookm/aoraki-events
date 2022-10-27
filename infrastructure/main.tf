@@ -28,7 +28,7 @@ data "azurerm_resource_group" "rg" {
 resource "azurerm_eventgrid_domain" "domain" {
   name = "aoraki"
 
-  location            = data.azurerm_resource_group.rg.location
+  location            = "australia east"
   resource_group_name = data.azurerm_resource_group.rg.name
 
   tags = {
