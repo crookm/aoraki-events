@@ -5,4 +5,13 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <PropertyGroup Label="Nuget">
+        <PackageId>Aoraki.Events.Contracts</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Matthew Crook</Authors>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Aoraki Events Contracts</Title>
+        <Summary>Contracts and DTOs for Aoraki Events</Summary>
+    </PropertyGroup>
+
 </Project>
