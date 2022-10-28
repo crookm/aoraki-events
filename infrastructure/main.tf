@@ -38,8 +38,7 @@ resource "azurerm_storage_account" "diag" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 
-  shared_access_key_enabled       = false
-  default_to_oauth_authentication = true
+  shared_access_key_enabled = false
 
   tags = local.tags
 }
