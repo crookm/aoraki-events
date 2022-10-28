@@ -1,0 +1,44 @@
+name: ci
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# dependabot triggered actions have more limited `GITHUB_TOKEN` permissions by default
+# - see: https://docs.github.com/en/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions#changing-github_token-permissions
+permissions:
+  packages: write
+  deployments: write
+  pull-requests: write
+  statuses: write
+  checks: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: setup .net
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+
+      - name: restore
+        run: dotnet restore
+
+      - name: build
+        run: dotnet build -c Release --no-restore
+        
+      - name: stage packages
+        run: mv src/**/Release/**/*.nupkg .
+
+      - name: archive packages
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: "*.nupkg"
+          if-no-files-found: error
