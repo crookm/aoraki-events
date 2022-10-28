@@ -1,4 +1,3 @@
-using System.Net;
 using System.Text.Json.Serialization;
 
 namespace Aoraki.Events.Contracts.Blog;
@@ -10,5 +9,5 @@ public class CommentCreatedEvent : BlogEvent
 
     public string? AuthorName { get; set; }
     public string? Content { get; set; }
-    public IPAddress? IpAddress { get; set; }
+    public string? IpAddress { get; set; }
 }
