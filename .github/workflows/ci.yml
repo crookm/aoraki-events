@@ -34,7 +34,7 @@ jobs:
         run: dotnet build -c Release --no-restore
         
       - name: stage packages
-        run: mv src/**/Release/**/*.nupkg .
+        run: find . -name "Aoraki.Events.*.nupkg" -exec mv '{}' . \;
 
       - name: archive packages
         uses: actions/upload-artifact@v3
