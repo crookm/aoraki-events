@@ -28,6 +28,18 @@ resource "azurerm_resource_group" "rg" {
   tags = local.tags
 }
 
+resource "azurerm_storage_account" "diag" {
+  name = "aorakieventdiag52a708"
+
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+  shared_access_key_enabled = false
+}
+
 resource "azurerm_eventgrid_domain" "domain" {
   name = "aoraki"
 
@@ -41,4 +53,29 @@ resource "azurerm_eventgrid_domain" "domain" {
   }
 
   tags = local.tags
+}
+
+resource "azurerm_monitor_diagnostic_setting" "diag" {
+  name = "failure diagnostics"
+
+  target_resource_id = azurerm_eventgrid_domain.domain.id
+  storage_account_id = azurerm_storage_account.diag.id
+
+  log {
+    category = "DeliveryFailures"
+
+    retention_policy {
+      enabled = true
+      days    = 90
+    }
+  }
+
+  log {
+    category = "PublishFailures"
+
+    retention_policy {
+      enabled = true
+      days    = 90
+    }
+  }
 }
