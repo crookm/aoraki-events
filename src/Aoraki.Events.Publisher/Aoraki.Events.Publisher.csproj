@@ -12,6 +12,7 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Aoraki Events Publisher</Title>
         <Summary>Package for producing events into the Aoraki EventGrid</Summary>
+        <RepositoryUrl>https://github.com/crookm/aoraki-events</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>

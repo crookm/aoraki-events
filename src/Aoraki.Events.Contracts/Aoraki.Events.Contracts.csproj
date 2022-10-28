@@ -12,6 +12,7 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Aoraki Events Contracts</Title>
         <Summary>Contracts and DTOs for Aoraki Events</Summary>
+        <RepositoryUrl>https://github.com/crookm/aoraki-events</RepositoryUrl>
     </PropertyGroup>
 
 </Project>
