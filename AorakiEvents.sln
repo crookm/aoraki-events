@@ -8,6 +8,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aoraki.Events.Contracts", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aoraki.Events.Publisher", "src\Aoraki.Events.Publisher\Aoraki.Events.Publisher.csproj", "{5994B543-6B30-4996-97DB-7441FD81C9F1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution items", "solution items", "{7215CD16-C3B9-409B-A699-25B5C61BB2E3}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.github\dependabot.yml = .github\dependabot.yml
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     </PropertyGroup>
 
     <PropertyGroup Label="Nuget">
         <PackageId>Aoraki.Events.Contracts</PackageId>
-        <Version>1.0.1</Version>
+        <Version>1.1.0</Version>
         <Authors>Matthew Crook</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Aoraki Events Contracts</Title>
